@@ -7,8 +7,10 @@ const morgan = require("morgan");
 app.use(morgan("tiny"));
 dotenv.config()
 app.use(express.json())
-const userRouter = require("./routers/routes/index");
-app.use(userRouter);
+const userRouter = require("./routers/routes/users");
+const productsRouter = require("./routers/routes/products");
+app.use('/products',productsRouter);
+app.use('/users',userRouter);
 app.listen(PORT ,()=>{
     console.log('SERVER Runing');
 })
