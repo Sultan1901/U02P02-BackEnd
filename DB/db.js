@@ -1,15 +1,12 @@
-
-const mongoose = require('mongoose')
-const dotenv = require('dotenv');
-
-dotenv.config()
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 const DB = process.env.DB;
 const options = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  };
-
-  mongoose.connect(DB, options).then(
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+mongoose.connect(DB, options).then(
   () => {
     console.log("DB Ready To INJECT");
   },
@@ -17,7 +14,3 @@ const options = {
     console.log(err);
   }
 );
-
-
-
-
