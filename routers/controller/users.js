@@ -43,21 +43,21 @@ const update = (req, res) => {
       res.send(err);
     });
 };
-const cartUser = (req, res) => {
-  const { email, name } = req.params;
-  userModel
-    .findOneAndUpdate(
-      { email: email },
-      { $push: { favorite: name } },
-      { new: true }
-    )
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      res.send(err);
-    });
-};
+// const cartUser = (req, res) => {
+//   const { email, name } = req.params;
+//   userModel
+//     .findOneAndUpdate(
+//       { email: email },
+//       { $push: { favorite: name } },
+//       { new: true }
+//     )
+//     .then((result) => {
+//       res.send(result);
+//     })
+//     .catch((err) => {
+//       res.send(err);
+//     });
+// };
 const removeUserCart = (req, res) => {
   const { email, _id } = req.params;
   userModel
@@ -127,7 +127,7 @@ module.exports = {
   showuser,
   update,
   remove,
-  cartUser,
+  // cartUser,
   removeUserCart,
   cartUsercheck,
   getCart,
